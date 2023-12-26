@@ -55,6 +55,7 @@ function internalPost(url, data, headers, success, failure, error = defaultError
         else
             failure(data.message, data.code, url)
     }).catch(err => error(err))
+
 }
 
 function internalGet(url, headers, success, failure, error = defaultError){

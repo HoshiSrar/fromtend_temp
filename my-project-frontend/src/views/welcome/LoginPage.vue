@@ -4,6 +4,7 @@
       <div style="font-size: 25px;font-weight: bold">登录</div>
       <div style="font-size: 14px;color: grey">在进入系统之前请先输入用户名和密码进行登录</div>
     </div>
+
     <div style="margin-top: 50px">
       <el-form :model="form" :rules="rules" ref="formRef">
         <el-form-item prop="username">
@@ -36,6 +37,7 @@
         </el-row>
       </el-form>
     </div>
+
     <div style="margin-top: 40px">
       <el-button @click="userLogin()" style="width: 270px" type="success" plain>立即登录</el-button>
     </div>
