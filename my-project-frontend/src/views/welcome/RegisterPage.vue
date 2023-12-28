@@ -52,6 +52,7 @@
                     </el-row>
                 </el-form-item>
             </el-form>
+          <el-button @click="x">获取form</el-button>
         </div>
         <div style="margin-top: 80px">
             <el-button style="width: 270px" type="warning" @click="register" plain>立即注册</el-button>
@@ -77,7 +78,9 @@ const form = reactive({
     email: '',
     code: ''
 })
-
+function x(){
+  console.log()
+}
 const validateUsername = (rule, value, callback) => {
     if (value === '') {
         callback(new Error('请输入用户名'))
@@ -112,7 +115,7 @@ const rules = {
     ],
     email: [
         { required: true, message: '请输入邮件地址', trigger: 'blur' },
-        {type: 'email', message: '请输入合法的电子邮件地址', trigger: ['blur', 'change']}
+        {type: 'email', message: '请输入合法的电子邮件地址', trigger: ['b lur', 'change']}
     ],
     code: [
         { required: true, message: '请输入获取的验证码', trigger: 'blur' },
