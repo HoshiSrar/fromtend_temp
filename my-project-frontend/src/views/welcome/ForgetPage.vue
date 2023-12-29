@@ -166,6 +166,8 @@ const doReset = () => {
             }, () => {
                 ElMessage.success('密码重置成功，请重新登录')
                 router.push('/')
+            },(date)=>{
+              ElMessage.warning(date.data)
             })
         }
     })

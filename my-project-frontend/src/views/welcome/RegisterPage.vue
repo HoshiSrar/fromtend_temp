@@ -52,7 +52,6 @@
                     </el-row>
                 </el-form-item>
             </el-form>
-          <el-button @click="x">获取form</el-button>
         </div>
         <div style="margin-top: 80px">
             <el-button style="width: 270px" type="warning" @click="register" plain>立即注册</el-button>
@@ -78,9 +77,6 @@ const form = reactive({
     email: '',
     code: ''
 })
-function x(){
-  console.log()
-}
 const validateUsername = (rule, value, callback) => {
     if (value === '') {
         callback(new Error('请输入用户名'))
