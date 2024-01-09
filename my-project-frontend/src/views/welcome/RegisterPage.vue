@@ -77,6 +77,7 @@ const form = reactive({
     email: '',
     code: ''
 })
+
 const validateUsername = (rule, value, callback) => {
     if (value === '') {
         callback(new Error('请输入用户名'))
@@ -111,7 +112,7 @@ const rules = {
     ],
     email: [
         { required: true, message: '请输入邮件地址', trigger: 'blur' },
-        {type: 'email', message: '请输入合法的电子邮件地址', trigger: ['b lur', 'change']}
+        {type: 'email', message: '请输入合法的电子邮件地址', trigger: ['blur', 'change']}
     ],
     code: [
         { required: true, message: '请输入获取的验证码', trigger: 'blur' },

@@ -23,7 +23,7 @@ function takeAccessToken() {
     const str = localStorage.getItem(authItemName) || sessionStorage.getItem(authItemName);
     if(!str) return null
     const authObj = JSON.parse(str)
-    if(new Date(authObj.expire) <= new Date()) {
+    if(authObj.expire <= new Date()) {
         deleteAccessToken()
         ElMessage.warning("登录状态已过期，请重新登录！")
         return null
@@ -55,7 +55,6 @@ function internalPost(url, data, headers, success, failure, error = defaultError
         else
             failure(data.message, data.code, url)
     }).catch(err => error(err))
-
 }
 
 function internalGet(url, headers, success, failure, error = defaultError){
@@ -75,8 +74,7 @@ function login(username, password, remember, success, failure = defaultFailure){
         'Content-Type': 'application/x-www-form-urlencoded'
     }, (data) => {
         storeAccessToken(remember, data.token, data.expire)
-        ElMessage.success(`登录成功，欢迎 ${data.userName} 来到我们的系统`)
-        console.log(data)
+        ElMessage.success(`登录成功，欢迎 ${data.username} 来到我们的系统`)
         success(data)
     }, failure)
 }
@@ -101,4 +99,4 @@ function unauthorized() {
     return !takeAccessToken()
 }
 
-export { post, get, login, logout, unauthorized }
+export { post, get, login, logout, unauthorized, accessHeader }

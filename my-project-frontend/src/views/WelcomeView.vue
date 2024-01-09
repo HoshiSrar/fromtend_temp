@@ -6,7 +6,6 @@
         </div>
         <div class="welcome-title">
             <div style="font-size: 30px;font-weight: bold">欢迎来到我们的学习平台</div>
-            <div style="margin-top: 10px">在这里你可以学习如何使用Java，如何搭建网站，并且与Java同好们密切交流。</div>
         </div>
         <div class="right-card">
             <router-view v-slot="{ Component }">
